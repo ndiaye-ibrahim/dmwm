@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="localite">
+      <h2 data-cy="localiteDetailsHeading"><span>Localite</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ localite.id }}</span>
+        </dd>
+        <dt><span>Nom</span></dt>
+        <dd>
+          <span>{{ localite.nom }}</span>
+        </dd>
+        <dt><span>Souslocalite</span></dt>
+        <dd>
+          <div *ngIf="localite.souslocalite">
+            <a [routerLink]="['/sous-localite', localite.souslocalite?.id, 'view']">{{ localite.souslocalite?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Cellules</span></dt>
+        <dd>
+          <div *ngIf="localite.cellules">
+            <a [routerLink]="['/cellule', localite.cellules?.id, 'view']">{{ localite.cellules?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/localite', localite.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

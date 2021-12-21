@@ -1,0 +1,51 @@
+entity Localite {
+	nom String
+}
+entity SousLocalite {
+	nom String
+}
+entity Section {
+	nom String
+}
+entity Membre {
+	nom String,
+	prenom String,
+	fonctionInterne Rolemembre,
+	fonctionExterne String,
+	Structure String, 
+	situationMatrimoniale String,
+	numeroTelephone String,
+ 	email String	
+}
+entity Cellule {
+	nom Typecellule
+}
+enum Rolemembre {
+MembreSimple,
+President,
+VicePresident,
+Tresorier,
+Moniteur,
+Secretaire,
+AdjointSecretaire,
+ChargeFinance
+}
+enum Typecellule {
+	CA,
+	CO,
+	Technque,
+ 	OrientationIslamique	
+}   
+relationship OneToMany{
+        SousLocalite{localites} to Localite{souslocalite}
+	Section{souslocalite} to SousLocalite{section}
+	Cellule{localites} to Localite{cellules}
+	Cellule{souslocalite} to SousLocalite{cellule} 
+	Membre{sections} to Section{membre}
+}
+filter *
+
+service * with serviceClass
+
+paginate * with pagination
+

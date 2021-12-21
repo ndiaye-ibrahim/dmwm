@@ -1,0 +1,56 @@
+{
+  "name": "Membre",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fonctionInterne",
+      "fieldType": "Rolemembre",
+      "fieldValues": "MembreSimple,President,VicePresident,Tresorier,Moniteur,Secretaire,AdjointSecretaire,ChargeFinance"
+    },
+    {
+      "fieldName": "fonctionExterne",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "structure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "situationMatrimoniale",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroTelephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "section",
+      "otherEntityRelationshipName": "membre",
+      "relationshipName": "sections"
+    }
+  ],
+  "entityTableName": "membre",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211218215050"
+}

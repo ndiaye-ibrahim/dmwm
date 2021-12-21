@@ -1,0 +1,33 @@
+{
+  "name": "Section",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sousLocalite",
+      "otherEntityRelationshipName": "section",
+      "relationshipName": "souslocalite"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "membre",
+      "otherEntityRelationshipName": "sections",
+      "relationshipName": "membre"
+    }
+  ],
+  "entityTableName": "section",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211218215049"
+}

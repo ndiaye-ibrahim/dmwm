@@ -1,0 +1,34 @@
+{
+  "name": "Cellule",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "Typecellule",
+      "fieldValues": "CA,CO,Technque,OrientationIslamique"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "localite",
+      "otherEntityRelationshipName": "cellules",
+      "relationshipName": "localites"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sousLocalite",
+      "otherEntityRelationshipName": "cellule",
+      "relationshipName": "souslocalite"
+    }
+  ],
+  "entityTableName": "cellule",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211218215051"
+}

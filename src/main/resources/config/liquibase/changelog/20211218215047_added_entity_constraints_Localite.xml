@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Localite.
+    -->
+    <changeSet id="20211218215047-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="souslocalite_id"
+                                 baseTableName="localite"
+                                 constraintName="fk_localite__souslocalite_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sous_localite"/>
+
+        <addForeignKeyConstraint baseColumnNames="cellules_id"
+                                 baseTableName="localite"
+                                 constraintName="fk_localite__cellules_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cellule"/>
+    </changeSet>
+</databaseChangeLog>

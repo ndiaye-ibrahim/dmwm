@@ -1,0 +1,39 @@
+{
+  "name": "SousLocalite",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "localite",
+      "otherEntityRelationshipName": "souslocalite",
+      "relationshipName": "localites"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "section",
+      "otherEntityRelationshipName": "souslocalite",
+      "relationshipName": "section"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cellule",
+      "otherEntityRelationshipName": "souslocalite",
+      "relationshipName": "cellule"
+    }
+  ],
+  "entityTableName": "sous_localite",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211218215048"
+}
