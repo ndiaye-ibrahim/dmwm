@@ -18,7 +18,7 @@ entity Membre {
  	email String	
 }
 entity Cellule {
-	nom Typecellule
+	nom Typecellules
 }
 enum Rolemembre {
 MembreSimple,
@@ -30,7 +30,7 @@ Secretaire,
 AdjointSecretaire,
 ChargeFinance
 }
-enum Typecellule {
+enum Typecellules {
 	CA,
 	CO,
 	Technque,
