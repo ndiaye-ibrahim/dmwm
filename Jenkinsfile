@@ -17,3 +17,4 @@ stage('publish docker') {
         dockerImage.push 'latest'
     }
 }
+ }
