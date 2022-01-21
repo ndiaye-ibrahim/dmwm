@@ -8,13 +8,8 @@ stage('check java') {
     sh "java -version"
 }
 
-def dockerImage
-stage('build docker') {
-}
-
-stage('publish docker') {
-    docker.withRegistry('https://registry.hub.docker.com', 'docker-login') {
-        dockerImage.push 'latest'
-    }
+gitlabCommitStatus('build') {
+        docker.image('jhipster/jhipster:v7.4.1').inside('-u jhipster -e MAVEN_OPTS="-Duser.home=./"') {
+ }
 }
  }
