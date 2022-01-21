@@ -6,10 +6,10 @@ node {
      }
 
     gitlabCommitStatus('build') {
-        // docker.image('jhipster/jhipster:v5.4.2').inside('-u jhipster -e MAVEN_OPTS="-Duser.home=./"') {
-            stage('check java') {
-                sh "java -version"
-            }
+        docker.image('jhipster/jhipster:v7.4.1').inside('-u jhipster -e MAVEN_OPTS="-Duser.home=./"') {
+            // stage('check java') {
+            //     sh "java -version"
+            // }
 
             stage('clean') {
                 sh "chmod +x mvnw"
